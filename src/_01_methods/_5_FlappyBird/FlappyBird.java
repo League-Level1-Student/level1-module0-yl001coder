@@ -9,8 +9,10 @@ public class FlappyBird extends PApplet {
     int yVelocity = -5;
     int y = 300;
     int x = 100;
-    int upperPipeY = random.nextInt(250);
-    int pipeX = 799;
+    int pipeX = 600;
+    int pipeY = random.nextInt(200);
+    int pipeGap = 80;
+    int pipex = 600;
     int gravity = 1;
     @Override
     public void settings() {
@@ -30,8 +32,6 @@ public class FlappyBird extends PApplet {
     	ellipse(x,y, 40, 40);
     	yVelocity = yVelocity + gravity;
     	y = y - yVelocity;
-    	fill(53, 194, 25);
-    	rect(pipeX,upperPipeY,250,85);
     	pipeX--;
     	if(pipeX >= 0)
     	{
@@ -45,6 +45,13 @@ public class FlappyBird extends PApplet {
     	{
     		yVelocity = -5;
     	}
+    	fill(53, 194, 25);
+    	stroke(53,194,25);
+    	pipex = pipex - 5;
+    	rect(pipex,0,84,200);
+    	rect(pipex,(600-pipeGap), 84,200);
+    	if(pipex == 0) {
+    	pipex = 800;
     }
 
     static public void main(String[] args) {
