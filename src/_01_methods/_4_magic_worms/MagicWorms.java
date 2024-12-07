@@ -33,6 +33,7 @@ public class MagicWorms extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
     int green;
+    int r;
 
     @Override
     public void settings() {
@@ -47,17 +48,34 @@ public class MagicWorms extends PApplet {
     @Override
     public void draw() {
     	makeMagical();
-    	for(int i = 0; i<1000; i++)
+    	for(int i = 0; i<255; i++)
     	{
     		ellipse(getWormX(i),getWormY(i),15,15);
-    		fill(frameCount, i, 235);
+    		fill(frameCount, green, 235);
     		green = i;
     		green ++;
-    	}
+    		r = i;
+    		r++;
+    		if(frameCount == 255)
+    		{
+    			frameCount = 70;
+    		}
+    		else {}
+    		if(green == 255)
+    		{
+    			green = 70;
+    		}
+    		else
+    		{}
     	if(mousePressed)
     	{
     		ellipse(mouseX,mouseY,15,15);
     		fill(frameCount,green,235);
+    	}
+    	else
+    	{
+    		
+    	}
     	}
     }
 
@@ -65,7 +83,7 @@ public class MagicWorms extends PApplet {
         PApplet.main(MagicWorms.class.getName());
     }
 
-    /*********************** DO NOT MODIFY THE CODE BELOW ********************/
+    /*********************** DON'T MODIFY THE CODE BELOW ********************/
     float frequency = 0.001f;
     float noiseInterval = PI;
 

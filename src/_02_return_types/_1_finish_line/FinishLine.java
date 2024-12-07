@@ -1,10 +1,12 @@
 package _02_return_types._1_finish_line;
 
 
-
 import java.util.Random;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import org.jointheleague.graphical.robot.Robot;
 /*
@@ -14,7 +16,6 @@ import org.jointheleague.graphical.robot.Robot;
 public class FinishLine {
 	static Robot rob = new Robot("mini");
 	static int totalDistance;
-	
 	public static void main(String[] args) {
 		//1. Call the drawFinishLine() method
 		
@@ -30,7 +31,19 @@ public class FinishLine {
 		
 		
 		//7. Else use a pop up to say the robot did not finish and how far it went
-		
+		drawFinishLine();
+		crazyMove();
+		getTotalDistance();
+		hasCrossedFinishLine();
+		JFrame frame = new JFrame("text");
+		if(hasCrossedFinishLine() == true)
+		{
+			JOptionPane.showMessageDialog(frame ,"Your robot has reached the finish line and traveled " + totalDistance + " units.");
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(frame ,"Your robot didn't reach the finish line and traveled " + totalDistance + " units.");
+		}
 	}
 	
 	static void crazyMove() {
@@ -154,6 +167,7 @@ public class FinishLine {
 	static boolean hasCrossedFinishLine() {
 		if(rob.getY() < 200) {
 			return true;
+			
 		}
 		return false;
 	}
