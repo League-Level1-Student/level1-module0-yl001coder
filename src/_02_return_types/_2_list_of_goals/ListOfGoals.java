@@ -2,6 +2,7 @@ package _02_return_types._2_list_of_goals;
 
 
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class ListOfGoals {
@@ -9,6 +10,7 @@ public class ListOfGoals {
 	static int numberOfGoals = 0;
 	
 	public static void main(String[] args) {
+		JFrame frame = new JFrame("text");
 		//1. Call the appropriate method to make your list of goals
 		
 		//2. Call the appropriate method to get your list of goals, 
@@ -19,7 +21,20 @@ public class ListOfGoals {
 		
 		//4. Call the appropriate method to see if you put a lot of goals,
 		//   if you did put a lot of goals use a pop-up to say "Wow that's a lot of goals! Awesome!"
-		
+		createListOfGoals();
+		getListOfGoals();
+		JOptionPane.showMessageDialog(frame, "Here is your list of goals: " + getListOfGoals());
+		getNumberOfGoals();
+		JOptionPane.showMessageDialog(frame, "You have " + getNumberOfGoals() + " goals!");
+		isManyGoals();
+		if(isManyGoals() == true)
+		{
+			JOptionPane.showMessageDialog(frame ,"Wow! That's a lot of goals! Awesome!");
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(frame, "BRUH you don't have enough goals.");
+		}
 	}
 	
 	static void createListOfGoals() {

@@ -40,7 +40,7 @@ public class FinishLine {
 		{
 			JOptionPane.showMessageDialog(frame ,"Your robot has reached the finish line and traveled " + totalDistance + " units.");
 		}
-		else
+		else if(hasCrossedFinishLine() == false)
 		{
 			JOptionPane.showMessageDialog(frame ,"Your robot didn't reach the finish line and traveled " + totalDistance + " units.");
 		}
