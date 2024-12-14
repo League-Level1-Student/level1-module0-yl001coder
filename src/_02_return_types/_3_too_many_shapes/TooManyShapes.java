@@ -1,7 +1,7 @@
 package _02_return_types._3_too_many_shapes;
 
 
-
+import javax.swing.JFrame;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -12,6 +12,7 @@ public class TooManyShapes {
 	static Robot rob = new Robot();
 
 	public static void main(String[] args) {
+		JFrame frame = new JFrame("text");
 		//1. Ask the user how many sides they want their shape to be
 		
 		//2. Ask the user how many shapes they want
@@ -22,12 +23,27 @@ public class TooManyShapes {
 		
 			//5. Call and save what is returned from calculateTurnAngle()
 		
-			//6. Use drawPolygons() to draw your shape
+			//6. Use drawPolygons() to draw your shape(s)
 		
 		//7. If the shape CANNOT be drawn 
 			
 			//8. Call notEnoughSides() and print out what is returned 
-		
+		String sides = "";
+		sides = JOptionPane.showInputDialog("How many sides (integer)?");
+		Integer.parseInt(sides);
+		String shapes = "";
+		shapes = JOptionPane.showInputDialog("How many shapes (integer)?");
+		Integer.parseInt(shapes);
+		canMakeShape(sides);
+		if(canMakeShape(sides) == true) 
+		{
+			calculateTurnAngle(sides);
+			drawPolygons(sides,shapes,(calculateTurnAngle(sides)));
+		}
+		else
+		{
+			notEnoughSides();
+		}
 	}
 	
 	static int calculateTurnAngle(int numSides) {
@@ -57,6 +73,9 @@ public class TooManyShapes {
 			}
 	    }
 		rob.hide();
+	}
+	static void getNumberOfSides()
+	{
 	}
 	
 	static boolean canMakeShape(int numSides) {
