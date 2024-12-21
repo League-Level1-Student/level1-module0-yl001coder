@@ -10,6 +10,7 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class TooManyShapes {
 	static Robot rob = new Robot();
+	static int e = 0;
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("text");
@@ -29,21 +30,21 @@ public class TooManyShapes {
 			
 			//8. Call notEnoughSides() and print out what is returned 
 		String sides = "";
-		sides = JOptionPane.showInputDialog("How many sides (integer)?");
+		sides = JOptionPane.showInputDialog(frame,"How many sides would you like?");
 		Integer.parseInt(sides);
 		String shapes = "";
-		shapes = JOptionPane.showInputDialog("How many shapes (integer)?");
+		shapes = JOptionPane.showInputDialog(frame,"Now, how many shapes of each would you like?");
 		Integer.parseInt(shapes);
-		canMakeShape(sides);
-		if(canMakeShape(sides) == true) 
-		{
-			calculateTurnAngle(sides);
-			drawPolygons(sides,shapes,(calculateTurnAngle(sides)));
-		}
-		else
-		{
-			notEnoughSides();
-		}
+		//canMakeShape(sides);
+		//if(canMakeShape(sides) == true)
+		//{
+		//	calculateTurnAngle(sides);
+		//	drawPolygons(sides, shapes, calculateTurnAngle(sides));
+		//}
+		//else
+		//{
+		//	notEnoughSides();
+		//}
 	}
 	
 	static int calculateTurnAngle(int numSides) {

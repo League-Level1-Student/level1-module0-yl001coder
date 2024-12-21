@@ -13,12 +13,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class PhotoQuiz {
 
 	public void run() {
 
 		JFrame quizWindow = new JFrame();
+		JFrame quizImage = new JFrame();
 		quizWindow.setVisible(true);
 		// This will make sure the program exits when you close the window
 		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,7 +56,36 @@ public class PhotoQuiz {
 		// 13. ask another question
 
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		JFrame frame = new JFrame();
+		String image = "https://avatars.mds.yandex.net/get-shedevrum/12800065/img_05294e2001e711ef84956a067d72cb03/orig";
+		Component component = createImage("https://avatars.mds.yandex.net/get-shedevrum/12800065/img_05294e2001e711ef84956a067d72cb03/orig");
+		quizWindow.add(component);
+		quizWindow.pack();
+		String ask = "";
+		ask = JOptionPane.showInputDialog("What is that picture?");
+		if(ask.equalsIgnoreCase("cat")||(ask.equalsIgnoreCase("a cat")))
+		{
+			JOptionPane.showMessageDialog(frame,"CORRECT! You may proceed");
+			quizWindow.setVisible(false);
+			Component component2 = createImage("https://kens-nursery.com/wp-content/uploads/2019/02/HYL-POU-600x800.jpg");
+			quizImage.setVisible(true);
+			quizImage.add(component2);
+			quizImage.pack();
+			String askagain = "";
+			askagain = JOptionPane.showInputDialog("What is that fruit?");
+			if(askagain.equalsIgnoreCase("dragonfruit")||(askagain.equalsIgnoreCase("pink dragonfruit"))||(askagain.equalsIgnoreCase("dragon fruit"))||(askagain.equalsIgnoreCase("a pink dragon fruit"))||(askagain.equalsIgnoreCase("a pink dragonfruit"))||(askagain.equalsIgnoreCase("pink dragon fruit"))||(askagain.equalsIgnoreCase("dragon fruit"))||(askagain.equalsIgnoreCase("a dragon fruit")))
+			{
+				JOptionPane.showMessageDialog(frame, "Congratulations! You finished!!");
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(frame, "bruh you lost. AND ON THE LAST QUEStion");
+			}
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(frame, "INCORRECT :( sorry you cannot continue.");
+		}
 	}
 
 	private Component createImage(String imageUrl) {

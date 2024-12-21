@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 public class MyFirstSwingGUI {
 	public void run() {
-
+		int e = 0;
 		// 1. Create and initialize an object of the JFrame class
 
 		// 2. Set your JFrame object to be visible
@@ -35,15 +35,22 @@ public class MyFirstSwingGUI {
 
 		// 10. Pack your JFrame.
 
-		// 11. Run your program again. Do you see your message.
+		// 11. Run your program again. Do you see your message?
 
 		// 12. Use the loadImage method to set the icon of the JLabel object.
 
 		// 13. Re-pack the JFrame object.
 
 		// 14. Run the program one more time. Do you see the image?
-
-	}
+		JLabel label = new JLabel("Hello! How are you?");
+		JFrame frame = new JFrame("FRAME");
+		JPanel panel = new JPanel();
+		frame.show();	
+		label.show();
+		frame.add(panel);
+		panel.add(label);
+		label.setIcon(loadImage());
+		}
 
 	public ImageIcon loadImage() {
 		try {
