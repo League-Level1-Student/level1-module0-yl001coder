@@ -79,7 +79,7 @@ public class PhotoQuiz {
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(frame, "bruh you lost. AND ON THE LAST QUEStion");
+				JOptionPane.showMessageDialog(frame, "you lost. AND ON THE LAST QUEStion");
 			}
 		}
 		else

@@ -8,6 +8,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import game_tools.Sound;
 
@@ -16,10 +18,13 @@ public class DrumKit implements MouseListener {
     JLabel drumLabel;
 
     public void run() {
+    	JFrame frame = new JFrame();
+    	JPanel panel = new JPanel();
+    	JLabel label = new JLabel("I am a label");
         //  Make a JFrame variable and initialize it using "new JFrame()"
 
         //  Make the frame visible and
-        // set its default close operation to JFrame.EXIT_ON_CLOSE
+        //  set its default close operation to JFrame.EXIT_ON_CLOSE
 
         //  Set the title of the frame
 
@@ -50,7 +55,14 @@ public class DrumKit implements MouseListener {
         //  Add a cymbal image to make a Drum Kit (one has been provided).
         //  You will need a different sound to go with this image.
         //  Remember to add this MouseListener to it. Run the program.
-
+    	frame.setVisible(true);
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	frame.setTitle("I am a frame");
+    	frame.add(panel);
+    	createLabelImage("snare.jpg");
+    	String drumLabel = "snare.jpg";
+    	drumLabel = createLabelImage();
+    	panel.add(drumLabel, label);
     }
 
     @Override
