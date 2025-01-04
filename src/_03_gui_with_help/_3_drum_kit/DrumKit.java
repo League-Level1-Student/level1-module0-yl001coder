@@ -21,6 +21,7 @@ public class DrumKit implements MouseListener {
     	JFrame frame = new JFrame();
     	JPanel panel = new JPanel();
     	JLabel label = new JLabel("I am a label");
+    	JPanel otherPanel = new JPanel();
         //  Make a JFrame variable and initialize it using "new JFrame()"
 
         //  Make the frame visible and
@@ -58,11 +59,18 @@ public class DrumKit implements MouseListener {
     	frame.setVisible(true);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setTitle("I am a frame");
+    	frame.add(otherPanel);
     	frame.add(panel);
     	createLabelImage("snare.jpg");
-    	String drumLabel = "snare.jpg";
-    	drumLabel = createLabelImage();
-    	panel.add(drumLabel, label);
+    	drumLabel = createLabelImage("snare.jpg");
+    	panel.add(drumLabel);
+    	drumLabel.addMouseListener(null);
+    	
+    	
+    	
+    	
+    	
+    	//eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     }
 
     @Override
@@ -70,7 +78,7 @@ public class DrumKit implements MouseListener {
         // Print "mouse clicked" to the console. Run your program and watch
         // the console to see when this is printed.
 
-        //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
+        // JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
                                                         // that the mouse
                                                         // clicked on
 
@@ -81,7 +89,8 @@ public class DrumKit implements MouseListener {
 
         //  If the user clicks on the drumImage...use the playSound method to play the drum sound.
         //  Test to see if it works before moving on.
-
+    	System.out.println("mouse clicked");
+    	playSound("drum.wav");
     }
 
     private JLabel createLabelImage(String fileName) {

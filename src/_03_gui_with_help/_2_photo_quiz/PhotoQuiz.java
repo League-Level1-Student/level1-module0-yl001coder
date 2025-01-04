@@ -57,13 +57,13 @@ public class PhotoQuiz {
 
 		// 14+ check answer, say if correct or incorrect, etc.
 		JFrame frame = new JFrame();
-		String image = "https://avatars.mds.yandex.net/get-shedevrum/12800065/img_05294e2001e711ef84956a067d72cb03/orig";
-		Component component = createImage("https://avatars.mds.yandex.net/get-shedevrum/12800065/img_05294e2001e711ef84956a067d72cb03/orig");
+		String image = "https://i.guim.co.uk/img/media/f7147d82d84a63ac0789e5f9a2b1ccfde8297bb0/586_631_2661_1597/master/2661.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=1cea14681e667a4555eea7d8249e28d3";
+		Component component = createImage("https://i.guim.co.uk/img/media/f7147d82d84a63ac0789e5f9a2b1ccfde8297bb0/586_631_2661_1597/master/2661.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=1cea14681e667a4555eea7d8249e28d3");
 		quizWindow.add(component);
 		quizWindow.pack();
 		String ask = "";
 		ask = JOptionPane.showInputDialog("What is that picture?");
-		if(ask.equalsIgnoreCase("cat")||(ask.equalsIgnoreCase("a cat")))
+		if(ask.equalsIgnoreCase("a banana")||(ask.equalsIgnoreCase("banana"))||(ask.equalsIgnoreCase("banana ductaped to a wall"))||(ask.equalsIgnoreCASE))
 		{
 			JOptionPane.showMessageDialog(frame,"CORRECT! You may proceed");
 			quizWindow.setVisible(false);
