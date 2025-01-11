@@ -16,7 +16,7 @@ import game_tools.Sound;
 public class DrumKit implements MouseListener {
     static boolean canPlaySounds = true; // Set this to false if your computer cannot play sounds
     JLabel drumLabel;
-
+    JLabel cymbalLabel;
     public void run() {
     	JFrame frame = new JFrame();
     	JPanel panel = new JPanel();
@@ -64,23 +64,25 @@ public class DrumKit implements MouseListener {
     	createLabelImage("snare.jpg");
     	drumLabel = createLabelImage("snare.jpg");
     	panel.add(drumLabel);
-    	drumLabel.addMouseListener(null);
+    	drumLabel.addMouseListener(this);
+    	cymbalLabel = createLabelImage("cymbal.jpg");
+    	panel.add(cymbalLabel);
+    	cymbalLabel.addMouseListener(this);
+    	
+
     	
     	
-    	
-    	
-    	
-    	//eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    	frame.pack();
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        // Print "mouse clicked" to the console. Run your program and watch
-        // the console to see when this is printed.
 
         // JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
                                                         // that the mouse
-                                                        // clicked on
+                    
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // Print "mouse clicked" to the console. Run your program and watch
+        // the console to see when this is printed.                     // clicked on
 
         // You can use the drum sound provided ("drum.wav") or
         // download another drum sound (.wav) and drop it into the Drum Kit package.
@@ -89,10 +91,22 @@ public class DrumKit implements MouseListener {
 
         //  If the user clicks on the drumImage...use the playSound method to play the drum sound.
         //  Test to see if it works before moving on.
-    	System.out.println("mouse clicked");
-    	playSound("drum.wav");
+    	JLabel labelClicked = (JLabel) e.getSource();
+    	if(labelClicked.equals(cymbalLabel))
+    	{
+    		System.out.println("cymbalclicked");
+    		playSound("cymbal.wav");
+    	}
+    	else if(labelClicked.equals(drumLabel))
+    	{
+    		System.out.println("drumclicked");
+    		playSound("drum.wav");
+    	}
+    	
+    	
     }
-
+    
+    
     private JLabel createLabelImage(String fileName) {
         JLabel imageLabel = new JLabel();
         URL imageURL = getClass().getResource(fileName);
@@ -138,5 +152,6 @@ public class DrumKit implements MouseListener {
         // TODO Auto-generated method stub
 
     }
+   
 
 }

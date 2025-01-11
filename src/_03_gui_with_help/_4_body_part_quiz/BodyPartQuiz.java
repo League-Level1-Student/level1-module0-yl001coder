@@ -28,7 +28,7 @@ public class BodyPartQuiz {
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
-
+	int score;
 	public void run() {
 		initializeGui();
 		startQuiz();
@@ -64,12 +64,18 @@ public class BodyPartQuiz {
 		// -- Tell them they are wrong and who the person is
 
 		// 7. Use the showNextImage() method below to get the next image
-		showNextImage();
+		
 
 		// 8. .... repeat 4-7 for all your images.....
 
 		// 9. Show them their current score
-
+		panel.add(loadImage("src/_05_body_part_quiz/arnold.jpeg"));
+		window.pack();
+		if(guess.equalsIgnoreCase("arnold"))
+		{
+			JOptionPane.showOutputDialog("Correct! Your score is one!");
+			score++;
+		}
 	}
 
 	public void showNextImage() {
