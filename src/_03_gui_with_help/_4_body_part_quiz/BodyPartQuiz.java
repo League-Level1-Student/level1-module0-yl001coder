@@ -34,7 +34,7 @@ public class BodyPartQuiz {
 		startQuiz();
 	}
 
-	private void initializeGui() {
+	public void initializeGui() {
 		initializeImageList();
 		imageIterator = imageList.iterator();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,14 +48,13 @@ public class BodyPartQuiz {
 
 	}
 
-	private void startQuiz() {
+	public void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
 
 		// 2. Set the size of the window in the initializeGui() method 
 
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
@@ -71,13 +70,54 @@ public class BodyPartQuiz {
 		// 9. Show them their current score
 		panel.add(loadImage("src/_05_body_part_quiz/arnold.jpeg"));
 		window.pack();
-		if(guess.equalsIgnoreCase("arnold"))
+		String guess = JOptionPane.showInputDialog("who is this?");
+		if((guess.equalsIgnoreCase("arnold"))||(guess.equalsIgnoreCase("arnold schwarzenegger")))
 		{
-			JOptionPane.showOutputDialog("Correct! Your score is one!");
-			score++;
+			scorePlus();
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(panel, "No, this is Arnold Schwarzenegger");
+		}
+		showNextImage();
+		window.pack();
+		String guess2 = JOptionPane.showInputDialog("Who is this?");
+		if((guess2.equalsIgnoreCase("leonardo"))||(guess2.equalsIgnoreCase("leonardo dicaprio")))
+		{
+			scorePlus();
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(panel, "No, this is Leonardo DiCaprio");
+		}
+		showNextImage();
+		window.pack();
+		String guess3 = JOptionPane.showInputDialog("Who is this?");
+		if((guess3.equalsIgnoreCase("morgan"))||(guess3.equalsIgnoreCase("morgan freeman")))
+		{
+			scorePlus();
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(panel, "No, this is Morgan Freeman");
+		}
+		showNextImage();
+		window.pack();
+		String last = JOptionPane.showInputDialog("Who is this?");
+		if((last.equalsIgnoreCase("jack"))||(last.equalsIgnoreCase("jack black")))
+		{
+			scorePlus();
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(panel, "No, this is Jack Black");
 		}
 	}
-
+	public void scorePlus()
+	{
+		JOptionPane.showMessageDialog(panel, "Correct! You earn another point!");
+		score++;
+	}
 	public void showNextImage() {
 		panel.removeAll();
 		panel.add(getNextImage());
