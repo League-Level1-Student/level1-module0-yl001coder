@@ -51,6 +51,11 @@ public class DuellingButtons implements ActionListener {
 		rightButton.setText("Click meee");
 		leftButton.addActionListener(this);
 		rightButton.addActionListener(this);
+		panel.add(leftButton);
+		panel.add(rightButton);
+		frame.pack();
+		frame.setTitle("Demanding Buttons");
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -67,6 +72,13 @@ public class DuellingButtons implements ActionListener {
 			rightButton.setPreferredSize(BIG);
 			leftButton.setText("Click meee!");
 			leftButton.setPreferredSize(SMALL);
+		}
+		else if (buttonPressed.equals(rightButton))
+		{
+			leftButton.setText("Hey pick mee instead!!!");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setPreferredSize(SMALL);
+			rightButton.setText("Hey! Why did you make me smaller?");
 		}
 
 		

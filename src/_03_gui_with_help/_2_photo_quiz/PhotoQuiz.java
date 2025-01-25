@@ -63,7 +63,7 @@ public class PhotoQuiz {
 		quizWindow.pack();
 		String ask = "";
 		ask = JOptionPane.showInputDialog("What is that picture?");
-		if(ask.equalsIgnoreCase("a banana")||(ask.equalsIgnoreCase("banana"))||(ask.equalsIgnoreCase("banana ductaped to a wall"))||(ask.equalsIgnoreCASE))
+		if(ask.equalsIgnoreCase("a banana")||(ask.equalsIgnoreCase("banana"))||(ask.equalsIgnoreCase("banana ductaped to a wall"))||(ask.equalsIgnoreCase(ask)))
 		{
 			JOptionPane.showMessageDialog(frame,"CORRECT! You may proceed");
 			quizWindow.setVisible(false);
