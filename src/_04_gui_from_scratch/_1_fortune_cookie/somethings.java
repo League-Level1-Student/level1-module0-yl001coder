@@ -9,7 +9,7 @@ import java.util.Random;
 import javax.swing.JPanel;
 
 public class somethings implements ActionListener{
-	JButton button = new JButton("I am a button");
+	JButton button = new JButton("Fortune");
 	JFrame frame = new JFrame("I am a frame");
 	JPanel panel = new JPanel();
 
@@ -18,6 +18,7 @@ public class somethings implements ActionListener{
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		button.setVisible(true);
+		frame.add(button);
 		button.addActionListener(this);
 		frame.pack();
 		int rand = new Random().nextInt(5);
