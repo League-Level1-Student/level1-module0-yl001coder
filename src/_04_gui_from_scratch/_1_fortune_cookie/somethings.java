@@ -21,28 +21,7 @@ public class somethings implements ActionListener{
 		frame.add(button);
 		button.addActionListener(this);
 		frame.pack();
-		int rand = new Random().nextInt(5);
-		if(rand == 0)
-		{
-			JOptionPane.showMessageDialog(panel, "You will step on dog poop");
-		}
-		else if (rand == 1)
-		{
-			JOptionPane.showMessageDialog(panel, "A bird will poop on you");
-		}
-		else if (rand == 2)
-		{
-			JOptionPane.showMessageDialog(panel, "You will die soon");
-		}
-		else if (rand == 3)
-		{
-			JOptionPane.showMessageDialog(panel, "You will have a test today");
-		}
-		else if (rand == 4)
-		{
-			JOptionPane.showMessageDialog(panel, "You will fail a test today");
-		}
-		
+		System.out.println("wooooooohoooooo");
 	}
 	
 	@Override
@@ -51,7 +30,27 @@ public class somethings implements ActionListener{
 		JButton buttonPressed = (JButton) arg0.getSource();
 		if(buttonPressed.equals(button))
 		{
-			JOptionPane.showMessageDialog(panel, "Woohoo!");
+			int rand = new Random().nextInt(5);
+			if(rand == 0)
+			{
+				JOptionPane.showMessageDialog(panel, "You will step on dog poop");
+			}
+			else if (rand == 1)
+			{
+				JOptionPane.showMessageDialog(panel, "A bird will poop on you");
+			}
+			else if (rand == 2)
+			{
+				JOptionPane.showMessageDialog(panel, "You will die soon");
+			}
+			else if (rand == 3)
+			{
+				JOptionPane.showMessageDialog(panel, "You will have a test today");
+			}
+			else if (rand == 4)
+			{
+				JOptionPane.showMessageDialog(panel, "You will fail a test today");
+			}
 		}
 	}
 }
