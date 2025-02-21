@@ -31,20 +31,19 @@ public class TooManyShapes {
 			//8. Call notEnoughSides() and print out what is returned 
 		String sides = "";
 		sides = JOptionPane.showInputDialog(frame,"How many sides would you like?");
-		Integer.parseInt(sides);
+		int sides2 = Integer.parseInt(sides);
 		String shapes = "";
 		shapes = JOptionPane.showInputDialog(frame,"Now, how many shapes of each would you like?");
-		Integer.parseInt(shapes);
-		//canMakeShape(sides);
-		//if(canMakeShape(sides) == true)
-		//{
-		//	calculateTurnAngle(sides);
-		//	drawPolygons(sides, shapes, calculateTurnAngle(sides));
-		//}
-		//else
-		//{
-		//	notEnoughSides();
-		//}
+		int shapes2 = Integer.parseInt(shapes);		//canMakeShape(sides);
+		if(canMakeShape(sides2) == true)
+		{
+			calculateTurnAngle(sides2);
+			drawPolygons(sides2, shapes2, calculateTurnAngle(sides2));
+		}
+		else
+		{
+			notEnoughSides();
+		}
 	}
 	
 	static int calculateTurnAngle(int numSides) {
