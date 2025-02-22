@@ -26,6 +26,9 @@ public class SoundEffectsMachine implements ActionListener {
 		panel.add(button1);
 		panel.add(button2);
 		panel.add(button3);
+		button1.setText("sound");
+		button2.setText("sound");
+		button3.setText("sound");
 		button1.addActionListener(this);
 		button2.addActionListener(this);
 		button3.addActionListener(this);
@@ -50,7 +53,7 @@ public void actionPerformed(ActionEvent arg0)
 	}
 }
 private void playSound(String soundFile) {
-	String path = "src/_03_gui_from_scratch/_3_sound_effects_machine/";
+	String path = "src/_04_gui_from_scratch/_3_sound_effects_machine/";
 		File sound = new File(path+soundFile);
 		if (sound.exists()) {
 			new Thread(() -> {

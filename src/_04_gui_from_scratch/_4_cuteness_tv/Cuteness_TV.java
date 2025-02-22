@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
+import java.net.URI;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Cuteness_TV implements ActionListener{
@@ -13,11 +15,21 @@ public class Cuteness_TV implements ActionListener{
 	JButton button3 = new JButton("");
 	JFrame frame = new JFrame("I am a frame");
 	JPanel panel = new JPanel();
+	JLabel label = new JLabel("I am a label");
 	public void run()
 	{
-		button1.setText("random vid");
-		button2.setText("another random vid");
-		button3.setText("yet ANOTHER random video");
+		button1.setText("meeep i am a button");
+		button2.setText("meeeep i am a button");
+		button3.setText("meeeeep i am a button");
+		button1.setSize(667,334);
+		button2.setSize(667,334);
+		button3.setSize(667,334);
+		
+		frame.setSize(2001,1002);
+		frame.setVisible(true);
+		button1.setVisible(true);
+		button2.setVisible(true);
+		button3.setVisible(true);
 		button1.addActionListener(this);
 		button2.addActionListener(this);
 		button3.addActionListener(this);
@@ -28,15 +40,15 @@ public class Cuteness_TV implements ActionListener{
 	}
 	
 	void showDucks() {
-	     playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
+	     playVideo("https://youtu.be/n2JwA4Ngbf4?si=3vtP4Y-mlhtADoni");
 	}
 
 	void showFrog() {
-	     playVideo("https://www.youtube.com/watch?v=cBkWhkAZ9ds");
+	     playVideo("https://youtu.be/8lhEd25F1aQ?si=uul9_hSfJUg_peuN");
 	}
 
-	void showFluffyUnicorns() {
-	     playVideo("https://www.youtube.com/watch?v=a-xWhG4UU_Y");
+	void showFelt() {
+	     playVideo("https://youtu.be/EbSqjO-_nXs?si=6j65OZYZtwRXc4Qg");
 	}
 	
 	void playVideo(String videoID) {
@@ -69,7 +81,7 @@ public class Cuteness_TV implements ActionListener{
 		}
 		if(buttonPressed.equals(button3))
 		{
-			showFluffyUnicorns();
+			showFelt();
 		}
 	}
 }
